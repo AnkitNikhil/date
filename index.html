@@ -12,6 +12,7 @@
             text-align: center;
             margin: 20px;
             color: #5e366e;
+            overflow: hidden;
         }
 
         header {
@@ -35,6 +36,11 @@
         p {
             color: purple;
             font-size: 1.3em;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         button {
@@ -43,8 +49,8 @@
             cursor: pointer;
             position: absolute;
             border: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         #yesButton {
@@ -82,13 +88,16 @@
     <section>
         <p>My Dearest "Megha❤️",</p>
         <p>As the stars align and the moonlight casts its gentle glow, I invite you to join me on a magical evening.</p>
+        <p>Let's create beautiful memories together.</p>
         <p>Will you be my date and make this night unforgettable?</p>
 
-        <button id="yesButton"
-            onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform'">
-            Yes, I'm in!
-        </button>
+        <!-- YES BUTTON (100% WORKING) -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform"
+           target="_blank">
+            <button id="yesButton">Yes, I'm in!</button>
+        </a>
 
+        <!-- NO BUTTON -->
         <button id="noButton">No, sorry</button>
     </section>
 
@@ -99,11 +108,11 @@
             const maxX = window.innerWidth - noButton.offsetWidth;
             const maxY = window.innerHeight - noButton.offsetHeight;
 
-            const x = Math.random() * maxX;
-            const y = Math.random() * maxY;
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
 
-            noButton.style.left = x + "px";
-            noButton.style.top = y + "px";
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
         });
     </script>
 </body>
