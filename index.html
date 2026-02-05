@@ -10,9 +10,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffe6f2;
             text-align: center;
-            margin: 20px;
+            margin: 0;
             color: #5e366e;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         header {
@@ -37,10 +37,6 @@
             color: purple;
             font-size: 1.3em;
             line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
         }
 
         button {
@@ -76,44 +72,67 @@
             #yesButton { left: 25%; }
             #noButton { left: 60%; }
         }
+
+        /* Form container */
+        #formContainer {
+            display: none;
+            margin-top: 30px;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            max-width: 640px;
+            height: 520px;
+        }
     </style>
 </head>
 
 <body>
+
     <header>
         <h1>Special Date</h1>
         <img src="images/specialdate.jpg" alt="Special Date">
     </header>
 
-    <section>
+    <section id="inviteSection">
         <p>My Dearest "Megha❤️",</p>
         <p>As the stars align and the moonlight casts its gentle glow, I invite you to join me on a magical evening.</p>
-        <p>Let's create beautiful memories together.</p>
         <p>Will you be my date and make this night unforgettable?</p>
 
-        <!-- YES BUTTON (100% WORKING) -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform"
-           target="_blank">
-            <button id="yesButton">Yes, I'm in!</button>
-        </a>
-
-        <!-- NO BUTTON -->
+        <button id="yesButton">Yes, I'm in!</button>
         <button id="noButton">No, sorry</button>
+    </section>
+
+    <!-- GOOGLE FORM EMBED -->
+    <section id="formContainer">
+        <h2>Just one last step 💖</h2>
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform?embedded=true">
+            Loading…
+        </iframe>
     </section>
 
     <script>
         const noButton = document.getElementById("noButton");
+        const yesButton = document.getElementById("yesButton");
+        const inviteSection = document.getElementById("inviteSection");
+        const formContainer = document.getElementById("formContainer");
 
         noButton.addEventListener("mouseover", () => {
             const maxX = window.innerWidth - noButton.offsetWidth;
             const maxY = window.innerHeight - noButton.offsetHeight;
 
-            const randomX = Math.random() * maxX;
-            const randomY = Math.random() * maxY;
+            noButton.style.left = Math.random() * maxX + "px";
+            noButton.style.top = Math.random() * maxY + "px";
+        });
 
-            noButton.style.left = randomX + "px";
-            noButton.style.top = randomY + "px";
+        yesButton.addEventListener("click", () => {
+            inviteSection.style.display = "none";
+            formContainer.style.display = "block";
+            window.scrollTo({ top: formContainer.offsetTop, behavior: "smooth" });
         });
     </script>
+
 </body>
 </html>
