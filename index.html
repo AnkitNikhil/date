@@ -3,157 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special Date Invitation</title>
+<title>Special Date</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #ffe6f2;
-        color: #5e366e;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #ff5c7a, #ffe6f2);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
 
-    header {
-        background-color: #ff4d6e;
-        padding: 20px;
-        color: white;
-    }
+.container {
+    background: #fff0f6;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
 
-    header img {
-        width: 100%;
-        max-width: 500px;
-        border-radius: 10px;
-        margin-top: 15px;
-    }
+header {
+    background: #ff4d6e;
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+}
 
-    h1 {
-        margin: 0;
-        font-size: 2.2rem;
-        animation: heartbeat 1.5s infinite;
-    }
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
 
-    section {
-        padding: 20px;
-    }
+.hero {
+    padding: 20px;
+    text-align: center;
+}
 
-    p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        color: purple;
-    }
+.hero img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
 
-    /* BUTTON AREA */
-    .button-group {
-        margin-top: 25px;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
+.hero p {
+    color: #6a1b9a;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 12px 0;
+}
 
-    button {
-        padding: 14px 28px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
 
-    #yesButton {
-        background-color: #ff4d6e;
-        color: white;
-    }
+button {
+    padding: 14px 26px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 
-    #noButton {
-        background-color: #fa0808;
-        color: white;
-        position: relative;
-    }
+#yesButton {
+    background: #ff4d6e;
+    color: white;
+}
 
-    /* FORM */
-    #formContainer {
-        display: none;
-        margin-top: 30px;
-    }
+#noButton {
+    background: #ff0000;
+    color: white;
+    position: relative;
+}
 
-    iframe {
-        width: 100%;
-        max-width: 640px;
-        height: 520px;
-        border-radius: 10px;
-        border: none;
-    }
+#formContainer {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
 
-    @keyframes heartbeat {
-        0%,100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-    }
+#formContainer h2 {
+    color: #ff4d6e;
+    margin-bottom: 15px;
+}
 
-    @media (max-width: 480px) {
-        h1 {
-            font-size: 1.8rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-        }
-
-        iframe {
-            height: 600px;
-        }
-    }
+iframe {
+    width: 100%;
+    height: 560px;
+    border: none;
+    border-radius: 12px;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Special Date</h1>
-    <img src="images/specialdate.jpg" alt="Special Date">
-</header>
+<div class="container">
 
-<section id="inviteSection">
-    <p>My Dearest "Megha❤️",</p>
-    <p>As the stars align and the moonlight casts its gentle glow, I invite you to join me on a magical evening.</p>
-    <p>Will you be my date and make this night unforgettable?</p>
+    <header>
+        <h1>Special Date 💖</h1>
+    </header>
 
-    <div class="button-group">
-        <button id="yesButton">Yes, I'm in!</button>
-        <button id="noButton">No, sorry</button>
-    </div>
-</section>
+    <section class="hero" id="inviteSection">
+        <img src="images/specialdate.jpg" alt="Special Date">
 
-<section id="formContainer">
-    <h2>Just one last step 💖</h2>
-    <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform?embedded=true">
-        Loading…
-    </iframe>
-</section>
+        <p><strong>My Dearest Megha ❤️</strong></p>
+
+        <p>
+            Some moments deserve to be slow, sweet, and remembered forever.
+            I was hoping to steal one of those moments with you.
+        </p>
+
+        <p>
+            A quiet smile, shared laughter, and a night that feels a little more
+            magical just because you’re there.
+        </p>
+
+        <p><strong>So… will you be my date?</strong></p>
+
+        <div class="buttons">
+            <button id="yesButton">Yes, I’m in 💕</button>
+            <button id="noButton">No 🙈</button>
+        </div>
+    </section>
+
+    <section id="formContainer">
+        <h2>Just one last step ✨</h2>
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform?embedded=true">
+        </iframe>
+    </section>
+
+</div>
 
 <script>
-    const noButton = document.getElementById("noButton");
-    const yesButton = document.getElementById("yesButton");
-    const inviteSection = document.getElementById("inviteSection");
-    const formContainer = document.getElementById("formContainer");
+const noBtn = document.getElementById("noButton");
+const yesBtn = document.getElementById("yesButton");
+const invite = document.getElementById("inviteSection");
+const form = document.getElementById("formContainer");
 
-    noButton.addEventListener("mouseenter", () => {
-        const x = Math.random() * 80 - 40;
-        const y = Math.random() * 40 - 20;
-        noButton.style.transform = `translate(${x}px, ${y}px)`;
-    });
+// STRONG escape for mobile
+function moveNoButton() {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 120 - 60;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
 
-    yesButton.addEventListener("click", () => {
-        inviteSection.style.display = "none";
-        formContainer.style.display = "block";
-        window.scrollTo({ top: formContainer.offsetTop, behavior: "smooth" });
-    });
+noBtn.addEventListener("mouseenter", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
+
+yesBtn.addEventListener("click", () => {
+    invite.style.display = "none";
+    form.style.display = "block";
+    window.scrollTo({ top: form.offsetTop, behavior: "smooth" });
+});
 </script>
 
 </body>
