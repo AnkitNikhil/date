@@ -4,49 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Special Date Invitation</title>
-    <link rel="icon" href="images/date.png" type="image/x-icon">
 
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffe6f2; 
+            background-color: #ffe6f2;
             text-align: center;
             margin: 20px;
-            position: relative;
-            color: #5e366e; 
+            color: #5e366e;
         }
 
         header {
-            background-color: #ff4d6e; 
+            background-color: #ff4d6e;
             color: white;
             padding: 20px;
-            transition: background-color 0.5s ease;
         }
 
         header img {
             width: 100%;
             max-width: 600px;
-            height: auto;
-            border-radius: 10px; 
-            margin-top: 20px;
-        }
-
-        section {
+            border-radius: 10px;
             margin-top: 20px;
         }
 
         h1 {
-            color: snow; 
             font-size: 2.5em;
-            margin-bottom: 10px;
             animation: heartbeat 1.5s infinite;
         }
 
         p {
-            color: purple; 
+            color: purple;
             font-size: 1.3em;
-            line-height: 1.6;
-            margin-bottom: 20px;
         }
 
         button {
@@ -54,107 +42,69 @@
             font-size: 18px;
             cursor: pointer;
             position: absolute;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border: none;
             border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         #yesButton {
-            background-color: #ff4d6e; 
+            background-color: #ff4d6e;
             color: white;
-            transform: translate(-50%, -50%);
-            margin-top: 19px;
-            left: 42%;
+            left: 40%;
+            top: 75%;
         }
 
         #noButton {
             background-color: #fa0808;
             color: white;
-            transform: translate(-50%, -50%);
-            margin-top: 19px;
-            left: 55%; 
-        }
-
-        #yesButton:hover, #noButton:hover {
-            filter: brightness(1.2);
-        }
-
-        @keyframes moveAround {
-            0% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(50px, -50px);
-            }
-            50% {
-                transform: translate(100px, 0);
-            }
-            75% {
-                transform: translate(50px, 50px);
-            }
-            100% {
-                transform: translate(0, 0);
-            }
+            left: 55%;
+            top: 75%;
         }
 
         @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
-        @media screen and (max-width: 600px) {
-            #yesButton {
-                left: 30%; 
-                padding: 10px 20px;
-            }
-
-            #noButton {
-                left: 66%; 
-                padding: 10px 20px; 
-            }
+        @media (max-width: 600px) {
+            #yesButton { left: 25%; }
+            #noButton { left: 60%; }
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Special Date</h1>
-        <img src="images\specialdate.jpg" alt="Special Date" title="Special Date">
+        <img src="images/specialdate.jpg" alt="Special Date">
     </header>
+
     <section>
         <p>My Dearest "Megha❤️",</p>
         <p>As the stars align and the moonlight casts its gentle glow, I invite you to join me on a magical evening.</p>
-        <p>Let's create beautiful memories together in a place where laughter dances with the breeze and love fills the air.</p>
-        <p>With each passing moment, my heart beats faster, and I can't wait to share this special date with you.</p>
         <p>Will you be my date and make this night unforgettable?</p>
-        <button title="Yes Sure" id="yesButton" onclick="location.href="https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform?usp=publish-editor">Yes, I'm in!</button>
-        <button title="Don't even think!" id="noButton">No, sorry</button>
+
+        <button id="yesButton"
+            onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScRxqZ2oRVDAbXd1l5fDxZv7o3jLj1BfbRmVHYzgrhHxKVhIQ/viewform'">
+            Yes, I'm in!
+        </button>
+
+        <button id="noButton">No, sorry</button>
     </section>
 
     <script>
         const noButton = document.getElementById("noButton");
 
-        noButton.addEventListener("mouseover", moveAround);
+        noButton.addEventListener("mouseover", () => {
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
 
-        function moveAround() {
-            const maxX = window.innerWidth - noButton.clientWidth;
-            const maxY = window.innerHeight - noButton.clientHeight;
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
 
-            const randomX = Math.floor(Math.random() * maxX);
-            const randomY = Math.floor(Math.random() * maxY);
-
-            noButton.style.transition = "transform 2s ease-in-out";
-            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
-        }
-
-        noButton.addEventListener("transitionend", function() {
-            this.style.transition = "";
+            noButton.style.left = x + "px";
+            noButton.style.top = y + "px";
         });
     </script>
 </body>
 </html>
-
-
